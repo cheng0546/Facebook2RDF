@@ -3,7 +3,7 @@
 The project is for connecting the Facebook API to get informations of the user and saving in an ontology with RDF format, you can also query the ontology by SPARQL.
 
 
-=================== Step to run =====================
+=================== Steps to run =====================
 
 - Install the necessary dependences with Gradle, make sure that you have installed Gradle 
 - Right click the project and choose "Gradle - Refresh Gradle project"
