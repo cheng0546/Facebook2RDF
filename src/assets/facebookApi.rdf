@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#"
+     xml:base="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:facebookApi="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasCategory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Like"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasEmail -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasEmail">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#isEmailOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Email"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasGender -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasGender">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Gender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasPage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasPage">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#isCategoryOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#isCategoryOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#isCategoryOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#isEmailOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#isEmailOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Email"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likePage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likePage">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#emailAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#emailAddress">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Email"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likedTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likedTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#pageId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#pageId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#userId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#userId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Like"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Email -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Email"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Gender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Gender"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Like -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Like"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Man -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Man">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Woman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Man"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Woman"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Woman -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Woman">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

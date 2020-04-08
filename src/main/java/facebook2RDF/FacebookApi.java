@@ -12,14 +12,12 @@ public class FacebookApi {
         StringBuffer result = null;
         try {
             URL url = new URL(path);
-            //打开和url之间的连接
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             connection.setRequestProperty("Charset", "utf-8");
             connection.connect();
  
             result = new StringBuffer();
-            //读取URL的响应
             in = new BufferedReader(new InputStreamReader(
                     connection.getInputStream()));
             String line;
@@ -45,12 +43,12 @@ public class FacebookApi {
     public static void main(String[] args){
     	
     	String id = "2468713943378827";
-    	String fields = "id,likes";
-    	String token = "EAACh63bdojwBAFvoeQb6SzJL3mmwF7qgl5ZAt2WrHEr8ZA9g25NTaoRwzW5gd8V4ljFbgXJMfAHMDNV7EZCimqNeJwWBDuFglYUG4QxZBtfqCdk1Xz4XZAQFh49KuGk4b3LWIY4maSB4vAde3ZCnXO5IWlZCZAYVqL3PKUvrNC8V6tlI0BY2XnIZAOq0RChJvjf5snZAwwbPXl6AZDZD";
+    	String fields = "id,name,gender,email,likes{id,name,created_time,category}";
+    	String token = "EAACh63bdojwBAGRUkHqPhTQ2qgAtATchpNWM7FAyhU4zXGOv6MZBUvcdemMqYIFEai9Y17Q325MMGoxBhZB2UzktZAYMDEhQZBCbJlgrtCBSxCnA1frvJbXRFHKOvZCGI7NopIHmebsxD07f7jtzioLScvKtZAdsQdg3u8Ob8wnaUp2DUWIZCte966j1SiZBiGZBLeImAC8TH3wZDZD";
         
     	String path = "https://graph.facebook.com/" + id + "?fields=" + fields + "&access_token=" + token;
         JSONObject jsonObj = FacebookApi.getHttpInterface(path);
-        System.out.println("Result from Facebook API : " + jsonObj);
+        new JsonToRDF(jsonObj);
     }
 
 }

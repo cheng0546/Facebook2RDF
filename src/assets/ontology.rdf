@@ -1,0 +1,361 @@
+<rdf:RDF
+    xmlns:facebookApi="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Gender"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Email"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Man">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Woman"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Like"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Woman">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Man"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Woman"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likedBy">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#isEmailOf">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Email"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likePage">
+    <owl:inverseOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likedBy"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasPage">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#isCategoryOf"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#isCategoryOf">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasCategory">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Category"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Like"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasEmail">
+    <owl:inverseOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#isEmailOf"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Email"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#hasGender">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Gender"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#emailAddress">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Email"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#pageId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#likedTime">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Page"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#userId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#User"/>
+  </owl:DatatypeProperty>
+  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Taylor_Swift">
+    <facebookApi:likedTime>2016-04-05T11:04:22+0000</facebookApi:likedTime>
+    <facebookApi:isCategoryOf>
+      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Musician/Band">
+        <facebookApi:hasPage>
+          <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Justin_Bieber">
+            <facebookApi:likedTime>2014-04-14T11:23:34+0000</facebookApi:likedTime>
+            <facebookApi:isCategoryOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Musician/Band"/>
+            <facebookApi:pageId>67253243887</facebookApi:pageId>
+            <facebookApi:likedBy>
+              <facebookApi:Man rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen">
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Topito">
+                    <facebookApi:likedTime>2019-03-14T00:15:00+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Entertainment_Website">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Topito"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>136164895246</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Défi_CCE_IMT_Atlantique">
+                    <facebookApi:likedTime>2017-03-28T21:16:31+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Organisation">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Défi_CCE_IMT_Atlantique"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>1684321008506434</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Roomie">
+                    <facebookApi:likedTime>2017-05-28T20:26:39+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Musician/Band"/>
+                    <facebookApi:pageId>131033456938800</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Franjo">
+                    <facebookApi:likedTime>2019-03-09T09:42:26+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Video_creator">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Franjo"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>964373420270024</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#9GAG">
+                    <facebookApi:likedTime>2017-03-11T21:43:54+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#App_Page">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#9GAG"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>21785951839</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Code_de_Cuisine">
+                    <facebookApi:likedTime>2017-02-08T22:45:07+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Community">
+                        <facebookApi:hasPage>
+                          <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#ClubChine_IMT_Atlantique">
+                            <facebookApi:likedTime>2016-04-27T04:02:04+0000</facebookApi:likedTime>
+                            <facebookApi:isCategoryOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Community"/>
+                            <facebookApi:pageId>376732339186329</facebookApi:pageId>
+                            <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                          </facebookApi:Page>
+                        </facebookApi:hasPage>
+                        <facebookApi:hasPage>
+                          <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Code_d&apos;Armor">
+                            <facebookApi:likedTime>2017-01-06T07:16:25+0000</facebookApi:likedTime>
+                            <facebookApi:isCategoryOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Community"/>
+                            <facebookApi:pageId>106704889835817</facebookApi:pageId>
+                            <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                          </facebookApi:Page>
+                        </facebookApi:hasPage>
+                        <facebookApi:hasPage>
+                          <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#The_Walking_Breizh">
+                            <facebookApi:likedTime>2017-01-07T13:50:55+0000</facebookApi:likedTime>
+                            <facebookApi:isCategoryOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Community"/>
+                            <facebookApi:pageId>695668143916097</facebookApi:pageId>
+                            <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                          </facebookApi:Page>
+                        </facebookApi:hasPage>
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Code_de_Cuisine"/>
+                        <facebookApi:hasPage>
+                          <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#IMT_Atlantique_Alumni">
+                            <facebookApi:likedTime>2019-12-18T23:29:18+0000</facebookApi:likedTime>
+                            <facebookApi:isCategoryOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Community"/>
+                            <facebookApi:pageId>100121630079076</facebookApi:pageId>
+                            <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                          </facebookApi:Page>
+                        </facebookApi:hasPage>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>254002721705881</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#BDS_IMT_Atlantique_-_Brest">
+                    <facebookApi:likedTime>2017-06-02T13:39:00+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Non-profit_organisation">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#BDS_IMT_Atlantique_-_Brest"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>291260527604162</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:hasGender>
+                  <facebookApi:Gender rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#male"/>
+                </facebookApi:hasGender>
+                <facebookApi:likePage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Code_d&apos;Armor"/>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Waste_+_idea_=surprise">
+                    <facebookApi:likedTime>2016-04-27T04:02:25+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Personal_blog">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Waste_+_idea_=surprise"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>1628285147391687</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Kyan_Khojandi">
+                    <facebookApi:likedTime>2017-05-07T19:21:41+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Artist">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Kyan_Khojandi"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>166990230005524</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Justin_Bieber"/>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Gala_IMT_Atlantique_2020_-_Diplôme_Télécom_Bretagne">
+                    <facebookApi:likedTime>2019-01-15T23:20:38+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#School">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Gala_IMT_Atlantique_2020_-_Diplôme_Télécom_Bretagne"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>328660194285098</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#The_Walking_Breizh"/>
+                <facebookApi:likePage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#ClubChine_IMT_Atlantique"/>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Les_tribulations_d’Emma_au_Japon">
+                    <facebookApi:likedTime>2018-02-11T22:36:56+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Just_for_fun">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Les_tribulations_d’Emma_au_Japon"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>148138189328317</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#IMT_Atlantique_Alumni"/>
+                <facebookApi:hasEmail>
+                  <facebookApi:Email rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#emailOfCheng_Zhen">
+                    <facebookApi:isEmailOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                    <facebookApi:emailAddress>553508993@qq.com</facebookApi:emailAddress>
+                  </facebookApi:Email>
+                </facebookApi:hasEmail>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#IMT_Atlantique">
+                    <facebookApi:likedTime>2016-12-23T14:47:58+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Higher_education">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#IMT_Atlantique"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>341852039538468</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:userId>2468713943378827</facebookApi:userId>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#University_of_Electronic_Science_and_Technology_of_China">
+                    <facebookApi:likedTime>2014-12-04T12:14:58+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#University">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#University_of_Electronic_Science_and_Technology_of_China"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>112899698724859</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Goiânia,_Brazil">
+                    <facebookApi:likedTime>2017-03-11T23:28:35+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Town/City">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Goiânia,_Brazil"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>113400028670072</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#adidas_Runtastic">
+                    <facebookApi:likedTime>2017-03-23T22:38:47+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Sport_and_fitness_instruction">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#adidas_Runtastic"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>1227104667303769</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Ivresse">
+                    <facebookApi:likedTime>2017-02-11T22:58:13+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf>
+                      <facebookApi:Category rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Consulting_agency">
+                        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Ivresse"/>
+                      </facebookApi:Category>
+                    </facebookApi:isCategoryOf>
+                    <facebookApi:pageId>1254718724563263</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+                <facebookApi:likePage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Taylor_Swift"/>
+                <facebookApi:likePage>
+                  <facebookApi:Page rdf:about="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Log_n&apos;_Rythm">
+                    <facebookApi:likedTime>2017-03-05T21:33:16+0000</facebookApi:likedTime>
+                    <facebookApi:isCategoryOf rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Musician/Band"/>
+                    <facebookApi:pageId>1530720337242933</facebookApi:pageId>
+                    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+                  </facebookApi:Page>
+                </facebookApi:likePage>
+              </facebookApi:Man>
+            </facebookApi:likedBy>
+          </facebookApi:Page>
+        </facebookApi:hasPage>
+        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Taylor_Swift"/>
+        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Log_n&apos;_Rythm"/>
+        <facebookApi:hasPage rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Roomie"/>
+      </facebookApi:Category>
+    </facebookApi:isCategoryOf>
+    <facebookApi:pageId>19614945368</facebookApi:pageId>
+    <facebookApi:likedBy rdf:resource="http://www.semanticweb.org/yanni/ontologies/2020/3/facebookApi#Cheng_Zhen"/>
+  </facebookApi:Page>
+</rdf:RDF>
